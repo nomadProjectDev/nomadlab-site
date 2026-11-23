@@ -1,0 +1,11 @@
+# https://www.robotstxt.org/robotstxt.html
+User-agent: *
+Allow: /
+
+# Legacy static site - excluded from production
+Disallow: /legacy/
+
+# System route - internal only
+Disallow: /sistema
+
+Sitemap: https://nomadlab.es/sitemap.xml

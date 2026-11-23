@@ -1,0 +1,78 @@
+---
+description: NoMadLab design system v1.1 — tokens, grid, typography, and rules
+alwaysApply: true
+---
+
+# NoMadLab Design System v1.1
+
+The full specification is at `docs/DESIGN.md`. Never invent values — read the tokens.
+
+## Tokens
+
+All design tokens are CSS custom properties with `--nml-` prefix in `src/app/globals.css`.
+
+### Colors (no accent — APROBADO)
+- `--nml-color-bg-page`: #fafafa (body background)
+- `--nml-color-bg-surface`: #ffffff (cards, buttons)
+- `--nml-color-bg-inverse`: #171717 (dark bands)
+- `--nml-color-text-primary`: #171717 (17.18:1 contrast)
+- `--nml-color-text-secondary`: #4d4d4d (8.10:1 contrast)
+- `--nml-color-border-default`: #00000014 (1px lines)
+- Links: #171717 with 1px #7d7d7d underline, hover 2px #171717
+- Focus: double ring — 2px page color gap + 2px #171717 (17.18:1)
+
+### Typography (Inter Tight + JetBrains Mono)
+| Role | Size/Line | Weight | Tracking |
+|------|-----------|--------|----------|
+| display | 64/64 (desktop), 48/56 (tablet) | 500 | -0.04em / -0.02em |
+| headline | 56/56, 48/56, 32/40 | 500 | -0.025em to -0.015em |
+| title | 24/32 | 500 | -0.01em |
+| body | 16/24 | 400 | 0 |
+| body-strong | 16/24 | 500 | 0 |
+| label-md | 16/24 | 500 | 0 |
+| label-sm | 14/20 | 500 (nav) or 400 (links) | 0 |
+| mono | 12/20 | 500, tnum | 0 |
+
+Mono is ONLY for: year of a case, section index, or real code. Never in headlines, buttons, or stats.
+
+### Spacing Scale (px)
+4 · 8 · 16 · 24 · 32 · 48 · 64 · 96 · 128
+
+### Grid
+- Columns: 12 (≥1024), 8 (768–1023), 4 (≤599)
+- Margin: 24px
+- Gutter: 24px
+- Max width: 1448px
+- Header: 64px sticky
+
+### Controls
+- Button md: 40px (pointer) / 44px (touch or ≤1023px)
+- Button sm: 32px visual, 44px hit area
+- Radius: 6px (never 9999 pill)
+- Transition: 150ms cubic-bezier(0.4, 0, 0.2, 1)
+
+### Breakpoints
+375 · 390 · 768 · 834 · 1024 · 1440
+
+## Accessibility Requirements
+- AA contrast minimum (text ≥4.5:1, non-text ≥3:1)
+- Focus visible always — double ring, never outline: none without substitute
+- Touch targets: 44×44 minimum
+- `prefers-reduced-motion`: durations → 0, no scroll-behavior: smooth
+- One H1 per page, semantic HTML
+- Skip link to main content
+- `scroll-padding-top: 80px` so sticky header doesn't obscure focus
+
+## Banned Look
+Never use:
+- HUD/terminal styling, fake system labels (`SYS_`, `TARGET_DETECTED`)
+- Invented figures, stats, latencies, FPS
+- Mono as decoration
+- Gradients of any kind
+- Glassmorphism, blur, translucent surfaces
+- 3-card rounded grids, cards with shadows
+- Emojis, decorative icons
+- Centered hero with two buttons
+- Purple/blue accents, any accent color
+- Soft shadows everywhere
+- 9999px pill buttons (Vercel's signature)
