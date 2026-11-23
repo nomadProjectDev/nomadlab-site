@@ -404,3 +404,57 @@ label[for] {
   margin-inline: auto;
   padding-inline: var(--nml-layout-margin);
 }
+
+/* Header flex container */
+.header-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 100%;
+}
+
+/* Desktop navigation - hidden on mobile */
+.desktop-nav {
+  display: none;
+  align-items: center;
+  gap: var(--nml-space-24);
+}
+
+@media (min-width: 768px) {
+  .desktop-nav {
+    display: flex;
+  }
+}
+
+/* Desktop-only CTA */
+.desktop-cta {
+  display: none;
+}
+
+@media (min-width: 768px) {
+  .desktop-cta {
+    display: block;
+  }
+}
+
+/* Mobile menu button - hidden on desktop */
+.mobile-menu-btn {
+  display: flex;
+}
+
+@media (min-width: 768px) {
+  .mobile-menu-btn {
+    display: none;
+  }
+}
+
+/* Mobile menu overlay - hidden on desktop */
+.mobile-menu-overlay {
+  display: block;
+}
+
+@media (min-width: 768px) {
+  .mobile-menu-overlay {
+    display: none;
+  }
+}

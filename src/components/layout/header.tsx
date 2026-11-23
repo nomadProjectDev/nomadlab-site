@@ -62,7 +62,7 @@ export function Header({ locale = "es" }: HeaderProps) {
         isScrolled && "border-[var(--nml-color-alpha-black-10)]"
       )}
     >
-      <div className="page-wrapper h-full flex items-center justify-between">
+      <div className="page-wrapper header-container">
         {/* Wordmark */}
         <Link
           href={homeHref}
@@ -81,7 +81,7 @@ export function Header({ locale = "es" }: HeaderProps) {
 
         {/* Desktop Navigation */}
         <nav
-          className="hidden md:flex items-center gap-[var(--nml-space-24)]"
+          className="desktop-nav"
           aria-label={locale === "es" ? "Navegación principal" : "Main navigation"}
         >
           {items.map((item) => (
@@ -102,7 +102,7 @@ export function Header({ locale = "es" }: HeaderProps) {
         </nav>
 
         {/* CTA Button */}
-        <div className="hidden md:block">
+        <div className="desktop-cta">
           <Button variant="primary" size="sm" asChild>
             <Link
               href={locale === "en" ? "/en/contact" : "/contacto"}
@@ -117,9 +117,9 @@ export function Header({ locale = "es" }: HeaderProps) {
         <button
           type="button"
           className={cn(
-            "md:hidden",
+            "mobile-menu-btn",
             "w-[var(--nml-control-hit-min)] h-[var(--nml-control-hit-min)]",
-            "flex items-center justify-center",
+            "items-center justify-center",
             "focus-visible:outline-none",
             "focus-visible:shadow-[var(--nml-focus-ring)]",
             "focus-visible:rounded-[var(--nml-radius-sm)]"
@@ -167,7 +167,7 @@ export function Header({ locale = "es" }: HeaderProps) {
         <div
           id="mobile-menu"
           className={cn(
-            "md:hidden",
+            "mobile-menu-overlay",
             "fixed inset-0 top-[var(--nml-layout-header-height)]",
             "z-[var(--nml-z-overlay)]",
             "bg-[var(--nml-color-bg-page)]"

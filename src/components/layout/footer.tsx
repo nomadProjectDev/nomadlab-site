@@ -77,16 +77,12 @@ export function Footer({ locale = "es" }: FooterProps) {
       )}
     >
       <div className="page-wrapper">
-        <div className="grid-container">
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-[var(--nml-space-24)] md:gap-[var(--nml-space-32)]">
           {/* Footer columns */}
-          {content.columns.map((column, index) => (
+          {content.columns.map((column) => (
             <div
               key={column.title}
-              className={cn(
-                "col-span-2 md:col-span-2",
-                index === 0 && "col-start-1",
-                "mb-[var(--nml-space-32)] md:mb-0"
-              )}
+              className="mb-[var(--nml-space-16)] md:mb-0"
             >
               <h3
                 className={cn(
@@ -120,7 +116,7 @@ export function Footer({ locale = "es" }: FooterProps) {
           ))}
 
           {/* Language switcher */}
-          <div className="col-span-2 md:col-span-2 md:col-start-7">
+          <div>
             <h3
               className={cn(
                 "text-[var(--nml-type-label-sm-size)]",
