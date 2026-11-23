@@ -1,0 +1,52 @@
+---
+description: NoMadLab content rules — never invent data, use placeholders
+alwaysApply: true
+---
+
+# Content Rules
+
+## Never Invent Content
+
+Until real content exists from the project fact sheets:
+
+- **Never invent clients** — no fake company names
+- **Never invent figures** — no made-up stats, metrics, results, dates
+- **Never invent credits** — no fake agency names, awards, press mentions
+- **Never invent logos** — no placeholder brand marks
+- **Never invent case details** — no fake stack, tech, or outcomes
+
+## Use Clear Placeholders
+
+Every content slot without real data must be a **clearly marked placeholder**:
+
+```
+CASO PENDIENTE
+CLIENTE PENDIENTE  
+CRÉDITO PENDIENTE
+CIFRA PENDIENTE
+MEDIA PENDIENTE
+```
+
+Never use realistic-looking sample cases like "Acme Corp" or "Project X" that could be mistaken for real work.
+
+## Placeholder Styling
+
+- Use the same typography role the final content will use
+- Add `text-[var(--nml-color-text-secondary)]` for visual distinction
+- In code, mark with comments: `{/* PLACEHOLDER: awaiting fact sheet */}`
+
+## Real Data Sources
+
+Real content comes only from:
+- Project fact sheets (verified case data)
+- Client-approved materials
+- Confirmed press/awards with citations
+
+A figure only appears if it has a source in the fact sheet and indicates whether it's first-party or third-party data.
+
+## Media Placeholders
+
+For images/video without rights or files yet:
+- Show a gray placeholder box (#2a2a2a for hero, #f2f2f2 elsewhere)
+- Include label: "Fotograma real del caso · pendiente de derechos"
+- Never use stock photos or generated images as stand-ins
