@@ -1,0 +1,9 @@
+# Legacy static site - never deploy to production
+legacy/
+
+# Development and documentation files
+*.md
+!README.md
+.cursor/
+uploads/
+kb/

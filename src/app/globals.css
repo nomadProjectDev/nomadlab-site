@@ -1,0 +1,406 @@
+@import "tailwindcss";
+
+/* NoMadLab Design System v1.1 - APROBADO por Juan 2026-11-23 */
+/* Inter Tight y JetBrains Mono: SIL OFL 1.1 (public/fonts/LICENSE-*.txt) */
+
+@font-face {
+  font-family: "Inter Tight";
+  src: url("/fonts/inter-tight-latin-ext-wght-normal.woff2") format("woff2");
+  font-weight: 100 900;
+  font-style: normal;
+  font-display: swap;
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF,
+    U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020,
+    U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+
+@font-face {
+  font-family: "Inter Tight";
+  src: url("/fonts/inter-tight-latin-wght-normal.woff2") format("woff2");
+  font-weight: 100 900;
+  font-style: normal;
+  font-display: swap;
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA,
+    U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193,
+    U+2212, U+2215, U+FEFF, U+FFFD;
+}
+
+@font-face {
+  font-family: "JetBrains Mono";
+  src: url("/fonts/jetbrains-mono-latin-ext-wght-normal.woff2") format("woff2");
+  font-weight: 100 900;
+  font-style: normal;
+  font-display: swap;
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF,
+    U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020,
+    U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+
+@font-face {
+  font-family: "JetBrains Mono";
+  src: url("/fonts/jetbrains-mono-latin-wght-normal.woff2") format("woff2");
+  font-weight: 100 900;
+  font-style: normal;
+  font-display: swap;
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA,
+    U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193,
+    U+2212, U+2215, U+FEFF, U+FFFD;
+}
+
+:root {
+  /* Primitivos - Color */
+  --nml-color-neutral-0: #ffffff;
+  --nml-color-neutral-50: #fafafa;
+  --nml-color-neutral-100: #f2f2f2;
+  --nml-color-neutral-200: #ebebeb;
+  --nml-color-neutral-300: #e6e6e6;
+  --nml-color-neutral-500: #c9c9c9;
+  --nml-color-neutral-600: #a8a8a8;
+  --nml-color-neutral-700: #8f8f8f;
+  --nml-color-neutral-800: #7d7d7d;
+  --nml-color-neutral-900: #4d4d4d;
+  --nml-color-neutral-950: #383838;
+  --nml-color-neutral-1000: #171717;
+  --nml-color-alpha-black-8: #00000014;
+  --nml-color-alpha-black-10: #0000001a;
+
+  /* Primitivos - Font */
+  --nml-font-family-sans: "Inter Tight", system-ui, sans-serif;
+  --nml-font-family-mono: "JetBrains Mono", ui-monospace, Menlo, monospace;
+  --nml-font-weight-light: 300;
+  --nml-font-weight-regular: 400;
+  --nml-font-weight-medium: 500;
+  --nml-font-weight-semibold: 600;
+
+  /* Primitivos - Space */
+  --nml-space-4: 4px;
+  --nml-space-8: 8px;
+  --nml-space-16: 16px;
+  --nml-space-24: 24px;
+  --nml-space-32: 32px;
+  --nml-space-48: 48px;
+  --nml-space-64: 64px;
+  --nml-space-96: 96px;
+  --nml-space-128: 128px;
+
+  /* Primitivos - Radius, Border, Duration, Easing */
+  --nml-radius-none: 0px;
+  --nml-radius-sm: 6px;
+  --nml-border-width-hairline: 1px;
+  --nml-duration-fast: 150ms;
+  --nml-duration-base: 250ms;
+  --nml-easing-standard: cubic-bezier(0.4, 0, 0.2, 1);
+
+  /* Semánticos - Background */
+  --nml-color-bg-page: var(--nml-color-neutral-50);
+  --nml-color-bg-surface: var(--nml-color-neutral-0);
+  --nml-color-bg-inverse: var(--nml-color-neutral-1000);
+
+  /* Semánticos - Text */
+  --nml-color-text-primary: var(--nml-color-neutral-1000);
+  --nml-color-text-secondary: var(--nml-color-neutral-900);
+  --nml-color-text-disabled: var(--nml-color-neutral-700);
+  --nml-color-text-inverse: var(--nml-color-neutral-50);
+  --nml-color-text-link: var(--nml-color-neutral-1000);
+  --nml-color-text-link-visited: var(--nml-color-neutral-900);
+
+  /* Semánticos - Underline */
+  --nml-color-underline-link: var(--nml-color-neutral-800);
+  --nml-color-underline-link-hover: var(--nml-color-neutral-1000);
+
+  /* Semánticos - Border */
+  --nml-color-border-default: var(--nml-color-alpha-black-8);
+  --nml-color-border-control: var(--nml-color-neutral-200);
+
+  /* Semánticos - Action */
+  --nml-color-action-primary-bg: var(--nml-color-neutral-1000);
+  --nml-color-action-primary-bg-hover: var(--nml-color-neutral-950);
+  --nml-color-action-primary-bg-pressed: var(--nml-color-neutral-900);
+  --nml-color-action-primary-fg: var(--nml-color-neutral-0);
+  --nml-color-action-secondary-bg: var(--nml-color-neutral-0);
+  --nml-color-action-secondary-bg-hover: var(--nml-color-neutral-100);
+  --nml-color-action-secondary-bg-pressed: var(--nml-color-neutral-200);
+  --nml-color-action-secondary-fg: var(--nml-color-neutral-1000);
+
+  /* Semánticos - Focus (APROBADO: sin acento) */
+  --nml-color-focus-ring: var(--nml-color-neutral-1000);
+  --nml-color-focus-gap: var(--nml-color-bg-page);
+  --nml-color-focus-ring-inverse: var(--nml-color-neutral-50);
+
+  /* Semánticos - State */
+  --nml-state-disabled-opacity: 0.38;
+  --nml-state-disabled-container-opacity: 0.12;
+
+  /* Layout */
+  --nml-layout-page-max: 1448px;
+  --nml-layout-content-max: 1400px;
+  --nml-layout-margin: var(--nml-space-24);
+  --nml-layout-gutter: var(--nml-space-24);
+  --nml-layout-columns-1440: 12;
+  --nml-layout-columns-834: 8;
+  --nml-layout-columns-390: 4;
+  --nml-layout-header-height: 64px;
+  --nml-layout-scroll-offset: 80px;
+  --nml-layout-measure: 520px;
+
+  /* Control */
+  --nml-control-height-md: 40px;
+  --nml-control-height-sm: 32px;
+  --nml-control-height-touch: 44px;
+  --nml-control-hit-min: 44px;
+  --nml-control-touch-gap: 8px;
+
+  /* Hero */
+  --nml-hero-media-cols-1440: 6 / 13;
+  --nml-hero-text-cols-1440: 1 / 5;
+  --nml-hero-media-cols-834: 3 / 9;
+  --nml-hero-text-cols-834: 1 / 7;
+  --nml-hero-media-cols-390: 1 / -1;
+  --nml-hero-aspect-wide: 16 / 9;
+  --nml-hero-aspect-narrow: 1 / 1;
+
+  /* Z-Index */
+  --nml-z-base: 0;
+  --nml-z-raised: 10;
+  --nml-z-sticky: 20;
+  --nml-z-overlay: 40;
+  --nml-z-modal: 100;
+
+  /* Typography - Display */
+  --nml-type-display-lg-size: 64px;
+  --nml-type-display-lg-line: 64px;
+  --nml-type-display-lg-weight: var(--nml-font-weight-medium);
+  --nml-type-display-lg-tracking: -0.04em;
+  --nml-type-display-md-size: 48px;
+  --nml-type-display-md-line: 56px;
+  --nml-type-display-md-weight: var(--nml-font-weight-medium);
+  --nml-type-display-md-tracking: -0.02em;
+
+  /* Typography - Headline */
+  --nml-type-headline-lg-size: 56px;
+  --nml-type-headline-lg-line: 56px;
+  --nml-type-headline-lg-weight: var(--nml-font-weight-medium);
+  --nml-type-headline-lg-tracking: -0.025em;
+  --nml-type-headline-md-size: 48px;
+  --nml-type-headline-md-line: 56px;
+  --nml-type-headline-md-weight: var(--nml-font-weight-medium);
+  --nml-type-headline-md-tracking: -0.02em;
+  --nml-type-headline-sm-size: 32px;
+  --nml-type-headline-sm-line: 40px;
+  --nml-type-headline-sm-weight: var(--nml-font-weight-medium);
+  --nml-type-headline-sm-tracking: -0.015em;
+
+  /* Typography - Title */
+  --nml-type-title-md-size: 24px;
+  --nml-type-title-md-line: 32px;
+  --nml-type-title-md-weight: var(--nml-font-weight-medium);
+  --nml-type-title-md-tracking: -0.01em;
+
+  /* Typography - Body */
+  --nml-type-body-md-size: 16px;
+  --nml-type-body-md-line: 24px;
+  --nml-type-body-md-weight: var(--nml-font-weight-regular);
+  --nml-type-body-md-tracking: 0em;
+  --nml-type-body-strong-weight: var(--nml-font-weight-medium);
+
+  /* Typography - Label */
+  --nml-type-label-md-size: 16px;
+  --nml-type-label-md-line: 24px;
+  --nml-type-label-md-weight: var(--nml-font-weight-medium);
+  --nml-type-label-sm-size: 14px;
+  --nml-type-label-sm-line: 20px;
+  --nml-type-label-sm-weight: var(--nml-font-weight-medium);
+  --nml-type-label-sm-regular-weight: var(--nml-font-weight-regular);
+
+  /* Typography - Mono */
+  --nml-type-mono-sm-size: 12px;
+  --nml-type-mono-sm-line: 20px;
+  --nml-type-mono-sm-weight: var(--nml-font-weight-medium);
+
+  /* Responsive Roles (desktop default) */
+  --nml-role-display-size: var(--nml-type-display-lg-size);
+  --nml-role-display-line: var(--nml-type-display-lg-line);
+  --nml-role-display-tracking: var(--nml-type-display-lg-tracking);
+  --nml-role-headline-size: var(--nml-type-headline-lg-size);
+  --nml-role-headline-line: var(--nml-type-headline-lg-line);
+  --nml-role-headline-tracking: var(--nml-type-headline-lg-tracking);
+  --nml-role-hero-text-cols: var(--nml-hero-text-cols-1440);
+  --nml-role-hero-media-cols: var(--nml-hero-media-cols-1440);
+  --nml-role-hero-aspect: var(--nml-hero-aspect-wide);
+  --nml-layout-columns: var(--nml-layout-columns-1440);
+  --nml-role-control-height: var(--nml-control-height-md);
+
+  /* Compuestos */
+  --nml-focus-ring: 0 0 0 2px var(--nml-color-focus-gap),
+    0 0 0 4px var(--nml-color-focus-ring);
+  --nml-focus-ring-inverse: 0 0 0 2px var(--nml-color-bg-inverse),
+    0 0 0 4px var(--nml-color-focus-ring-inverse);
+  --nml-font-mono-features: "tnum" 1, "zero" 0;
+  --nml-control-ring: 0 0 0 1px var(--nml-color-border-control);
+  --nml-transition-control: background-color var(--nml-duration-fast)
+      var(--nml-easing-standard),
+    color var(--nml-duration-fast) var(--nml-easing-standard),
+    box-shadow var(--nml-duration-fast) var(--nml-easing-standard);
+}
+
+/* Tablet breakpoint: ≤1023px */
+@media (max-width: 1023px) {
+  :root {
+    --nml-role-display-size: var(--nml-type-display-md-size);
+    --nml-role-display-line: var(--nml-type-display-md-line);
+    --nml-role-display-tracking: var(--nml-type-display-md-tracking);
+    --nml-role-headline-size: var(--nml-type-headline-md-size);
+    --nml-role-headline-line: var(--nml-type-headline-md-line);
+    --nml-role-headline-tracking: var(--nml-type-headline-md-tracking);
+    --nml-role-hero-text-cols: var(--nml-hero-text-cols-834);
+    --nml-role-hero-media-cols: var(--nml-hero-media-cols-834);
+    --nml-layout-columns: var(--nml-layout-columns-834);
+    --nml-role-control-height: var(--nml-control-height-touch);
+  }
+}
+
+/* Mobile breakpoint: ≤599px */
+@media (max-width: 599px) {
+  :root {
+    --nml-role-headline-size: var(--nml-type-headline-sm-size);
+    --nml-role-headline-line: var(--nml-type-headline-sm-line);
+    --nml-role-headline-tracking: var(--nml-type-headline-sm-tracking);
+    --nml-role-hero-text-cols: 1 / -1;
+    --nml-role-hero-media-cols: var(--nml-hero-media-cols-390);
+    --nml-role-hero-aspect: var(--nml-hero-aspect-narrow);
+    --nml-layout-columns: var(--nml-layout-columns-390);
+  }
+}
+
+/* Touch device */
+@media (pointer: coarse) {
+  :root {
+    --nml-role-control-height: var(--nml-control-height-touch);
+  }
+}
+
+/* Reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  :root {
+    --nml-duration-fast: 0ms;
+    --nml-duration-base: 0ms;
+  }
+}
+
+/* Base styles */
+html {
+  scroll-padding-top: var(--nml-layout-scroll-offset);
+  -webkit-text-size-adjust: 100%;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  html {
+    scroll-behavior: smooth;
+  }
+}
+
+body {
+  margin: 0;
+  background: var(--nml-color-bg-page);
+  color: var(--nml-color-text-primary);
+  font-family: var(--nml-font-family-sans);
+  font-size: var(--nml-type-body-md-size);
+  line-height: var(--nml-type-body-md-line);
+  font-weight: var(--nml-type-body-md-weight);
+  letter-spacing: var(--nml-type-body-md-tracking);
+  overflow-wrap: anywhere;
+}
+
+/* Skip link for accessibility */
+.skip-link {
+  position: absolute;
+  top: -40px;
+  left: 0;
+  background: var(--nml-color-bg-inverse);
+  color: var(--nml-color-text-inverse);
+  padding: var(--nml-space-8) var(--nml-space-16);
+  z-index: var(--nml-z-modal);
+  text-decoration: none;
+  font-weight: var(--nml-font-weight-medium);
+}
+
+.skip-link:focus {
+  top: 0;
+}
+
+/* Typography utilities */
+code,
+kbd,
+samp,
+.mono {
+  font-family: var(--nml-font-family-mono);
+  font-feature-settings: var(--nml-font-mono-features);
+}
+
+/* Media defaults */
+img,
+video {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* Measure constraint for readability */
+.measure {
+  max-width: var(--nml-layout-measure);
+}
+
+/* Cursor for interactive elements */
+a,
+button,
+[role="button"],
+summary,
+label[for] {
+  cursor: pointer;
+}
+
+/* Focus styles */
+:focus {
+  outline: none;
+}
+
+:focus-visible {
+  outline: none;
+  box-shadow: var(--nml-focus-ring);
+  border-radius: var(--nml-radius-sm);
+}
+
+/* Inverse focus for dark backgrounds */
+.inverse :focus-visible {
+  box-shadow: var(--nml-focus-ring-inverse);
+}
+
+/* Forced colors mode support */
+@media (forced-colors: active) {
+  :focus-visible {
+    outline: 2px solid CanvasText;
+    outline-offset: 2px;
+  }
+}
+
+/* Tabular numbers utility */
+.tabular-nums {
+  font-variant-numeric: tabular-nums;
+}
+
+/* Grid container */
+.grid-container {
+  display: grid;
+  grid-template-columns: repeat(var(--nml-layout-columns), minmax(0, 1fr));
+  column-gap: var(--nml-layout-gutter);
+  max-width: var(--nml-layout-page-max);
+  margin-inline: auto;
+  padding-inline: var(--nml-layout-margin);
+}
+
+/* Page wrapper */
+.page-wrapper {
+  max-width: var(--nml-layout-page-max);
+  margin-inline: auto;
+  padding-inline: var(--nml-layout-margin);
+}
